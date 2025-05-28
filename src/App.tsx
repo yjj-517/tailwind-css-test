@@ -31,8 +31,8 @@ const App: React.FC = () => {
 		sessionStorage.setItem("theme", theme);
 	};
 	return (
-		<div className="text-cyan-50 h-screen bg-canvas">
-			<div>tailwind-css-test</div>
+		<div className=" h-screen bg-canvas">
+			<div className="text-black dark:text-rose-400 warm:text-sky-500">tailwind-css-test</div>
 			{themeArr.map((item, index) => (
 				<button
 					key={index}
