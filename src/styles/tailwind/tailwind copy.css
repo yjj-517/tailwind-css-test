@@ -1,0 +1,37 @@
+/* tailwind.css */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant warm (&:where([data-theme=warm], [data-theme=warm] *));
+
+/* first */
+
+@theme {
+	--color-canvas: var(--acme-canvas-color);
+}
+@layer theme {
+	[data-theme="light"] {
+		--acme-canvas-color: red;
+	}
+	[data-theme="dark"] {
+		--acme-canvas-color: blue;
+	}
+	[data-theme="warm"] {
+		--acme-canvas-color: yellow;
+	}
+}
+
+/* second */
+/* :root {
+	--acme-canvas-color: red;
+}
+[data-theme="dark"] {
+	--acme-canvas-color: blue;
+}
+[data-theme="warm"] {
+	--acme-canvas-color: yellow;
+}
+@theme inline {
+	--color-canvas: var(--acme-canvas-color);
+} */
