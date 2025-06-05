@@ -31,15 +31,16 @@ const App: React.FC = () => {
 		sessionStorage.setItem("theme", theme);
 	};
 	return (
-		<div className=" h-screen bg-canvas">
+		<div className=" h-screen bg-primary">
 			<div className="text-black dark:text-rose-400 warm:text-sky-500">tailwind-css-test</div>
+			<div className="text-black dark:text-rose-400 ">tailwind-css-test</div>
 			{themeArr.map((item, index) => (
 				<button
 					key={index}
 					onClick={() => {
 						toggleTheme(item.type);
 					}}
-					className="w-16 m-4 bg-cyan-600 h-10 rounded-lg"
+					className="w-16 m-4 h-10 primary-button"
 				>
 					{item.name}
 				</button>

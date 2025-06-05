@@ -1,37 +1,39 @@
 /* tailwind.css */
 
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-@custom-variant warm (&:where([data-theme=warm], [data-theme=warm] *));
-
-/* first */
-
-@theme {
-	--color-canvas: var(--acme-canvas-color);
-}
-@layer theme {
-	[data-theme="light"] {
-		--acme-canvas-color: red;
+@layer base {
+	:root {
+		/* 字体 */
+		--sm-font-family-1: Arial;
+		/* theme-color */
+		--sm-color-fg-1: red;
+		--sm-color-fg-2: yellow;
+		/* layout-sider-宽度 */
+		--sm-account-sider-width: 240px;
 	}
-	[data-theme="dark"] {
-		--acme-canvas-color: blue;
+	:root[data-theme="dark"] {
+		--sm-color-fg-1: yellow;
 	}
-	[data-theme="warm"] {
-		--acme-canvas-color: yellow;
+	:root[data-theme="warm"] {
+		--sm-color-fg-1: blue;
+	}
+	/* 滚动条 */
+	.trove-scrollbar {
+		overflow-y: auto;
+		overflow-x: auto;
+		scrollbar-width: thin;
+		scrollbar-color: var(--sm-color-fg-1) var(--sm-color-fg-2);
 	}
 }
 
-/* second */
-/* :root {
-	--acme-canvas-color: red;
+@layer components {
+	section.main {
+		@apply w-full max-w-[1440px] mx-auto relative px-5 md:px-8 lg:px-12 overflow-hidden;
+	}
+	button.primary-button {
+		@apply flex justify-center items-center gap-1 rounded-lg font-medium bg-gradient-to-r from-primary to-regular hover:from-[#00CD83] hover:to-[#008FCD];
+	}
 }
-[data-theme="dark"] {
-	--acme-canvas-color: blue;
-}
-[data-theme="warm"] {
-	--acme-canvas-color: yellow;
-}
-@theme inline {
-	--color-canvas: var(--acme-canvas-color);
-} */
